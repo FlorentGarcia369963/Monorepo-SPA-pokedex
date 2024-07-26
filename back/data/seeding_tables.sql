@@ -410,7 +410,7 @@ VALUES
 (1, 'Make Psychokwak Great Again', 'La team qui fait mal à la teuté'),
 (2, 'Front de Libération des Pokémons Oiseaux', 'Le nom parle de lui même'),
 (3, 'Team Rocket', 'Plus rapide que la lumière, rendez vous tous ou ce sera la guerre'),
-(4, 'Les japs', 'nihon djin dess')
+(4, 'Team Brocoli', 'Bon pour la santé')
 ;
 
 
