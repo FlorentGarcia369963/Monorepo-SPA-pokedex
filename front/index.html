@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='%23000000'%3E%3Cpath d='M3 3.6V20.4C3 20.7314 3.26863 21 3.6 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H3.6C3.26863 3 3 3.26863 3 3.6Z' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M6 6L6 16' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M10 6V9' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M14 6V13' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M18 6V11' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS-->
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+
+    <!-- Custom JS -->
+    <script defer type="module" src="./assets/js/index.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <header class="header">
+            <h1 class="header-title">Pokemon Blue</h1>
+        </header>
+        <main class="main">
+
+            <section class="section" id="sidebar">
+                <div class="team-container">
+                   
+                </div>
+
+                <span class="button" id="add-team-button">Ajouter une team</span>
+
+
+            </section>
+
+            <section class="section" id="pokemon-list">
+                <span class="button" id="see-types-button">Voir les types de pokémon</span>
+
+
+            </section>
+        </main>
+        <!-- modale pour ajouter une team -->
+        <div class="modal" id="add-team-modal">
+            <div class="modal-background close"></div>
+            <div class="modal-card">
+                <form>
+                    <div class="modal-card-head">
+                        <p class="modal-card-title">Ajouter une Team</p>
+                        
+                    </div>
+
+                    <!-- <input type="hidden" name="id" /> -->
+
+                    <div class="modal-card-body">
+                        <label class="label">Nom de la Team</label>
+                        <input class="input" type="text" name="name" placeholder="Nom de la Team" />
+                        <label class="label">Description de la Team</label>
+                        <input class="input" type="text" name="description" placeholder="Description de la Team" />
+                    </div>
+
+                    <div class="modal-card-foot">
+                        <button class="button is-success" id="add-team-btn">Créer</button>
+                        <button class="button close" type="button">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale de modification de Team -->
+    <div class="modal" id="update-team-modal">
+        <div class="modal-background close"></div>
+        <div class="modal-card" slot="dataset">
+            <form>
+                <div class="modal-card-head">
+                    <p class="modal-card-title">Modifier une Team</p>
+                </div>
+
+                <!-- <input type="hidden" name="id" /> -->
+
+                <div class="modal-card-body">
+                    <label class="label">Nom de la Team</label>
+                    <input class="input" type="text" name="name" placeholder="Nom de la Team" />
+                    <label class="label">Description de la Team</label>
+                    <input class="input" type="text" name="description" placeholder="Description de la Team" />
+                </div>
+                <div class="list-pokemon">
+                    <ul class="team-pokemons-list"></ul>
+                </div>
+
+                <div class="modal-card-foot">
+                    <button class="button is-success">Modifier</button>
+                    <button class="button delete-team">Supprimer la Team</button>
+                    <button class="button close" type="button">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- modale pour ajouter un pokémon à une team-->
+    <div class="modal" id="add-pokemon-in-a-team-modal">
+        <div class="modal-background close"></div>
+        <div class="modal-card" slot="dataset">
+            <form>
+                <div class="modal-card-head">
+                    <p class="modal-card-title">Ajouter un pokémon dans la Team</p>
+                </div>
+
+                <input type="hidden" name="pokemon_id" />
+
+                <div class="modal-card-body">
+                    <label for="team-name" class="label">Nom de la Team</label>
+                    <select name="team_id" id="team-name">
+                        <option value="" id=""></option>
+                    </select>
+
+                <div class="modal-card-foot">
+                    <button class="button is-success">Valider</button>
+                    <button class="button close" type="button">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    
+    <!-- modale pour afficher les types de pokémon -->
+    <div class="modal" id="show-types-modal">
+        <div class="modal-background close"></div>
+            <div class="modal-card">
+                <div class="modal-type-container">
+                    <!-- <span class="modal-type">Acier</span> -->
+                
+                </div>
+                <button class="button close modal-type-close-button" type="button">Fermer</button>
+            </div>
+    </div>
+
+    <!-- modale pour afficher les caractéristiques d'un pokémon -->
+    <div class="modal" id="caracteristic-modal">
+        <div class="modal-background close"></div>
+        <div class="modal-card modal-card-details">
+            <h3 class="pokemon-list-pokemon-name"></h3>
+            <div class="carac-modal-type-container">
+                
+            </div>
+            <!-- src="./assets/img/59.webp" -->
+            <img class="pokemon-list-pokemon-image"  alt="">
+            <span class="carac">Caractéristiques</span>
+            <div class="caracteristics-detail">
+                <ul class="list-carac-container">
+                    <!-- <li class="carac-modal-carac" ><span>Hp:</span> <span slot="hp"></span ></li>
+                    <li class="carac-modal-carac" ><span>Attaque:</span> <span slot="atk"></span> </li>
+                    <li class="carac-modal-carac" ><span>Défense:</span> <span slot="def"></span> </li>
+                </ul>
+                <ul>
+                    <li class="carac-modal-carac" ><span>Attaque spéciale:</span> <span slot="atk_spe"></span> </li>
+                    <li class="carac-modal-carac" ><span>Défense Spéciale:</span> <span slot="def_spe"></span> </li>
+                    <li class="carac-modal-carac" ><span>Vitesse:</span> <span slot="speed"></span> </li> -->
+                </ul>
+            </div>
+            <div class="carac-modal-btn-container">
+                <button class="button close modal-type-close-button" type="button">Fermer</button>
+                <button class="button modal-compare-button" type="button">Comparer avec un autre pokémon</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+<!-- template pour les teams -->
+<template slot="team-template" id="team-template">
+    <article class="team" slot="dataset">
+        <h2 class="team-name"></h2>
+        <p class="team-description"></p>
+        <ul class="team-pokemons-list">
+            <!-- <li class="team-pokemon"><img class="team-pokemon-image" src="./assets/img/1.webp" alt=""></li>
+            <li class="team-pokemon"><img class="team-pokemon-image" src="./assets/img/10.webp" alt=""></li>
+            <li class="team-pokemon"><img class="team-pokemon-image" src="./assets/img/121.webp" alt=""></li> -->
+
+        </ul>
+        <span class="button" id="update-team-button">modifier la team</span>
+
+
+    </article>
+</template>
+
+<!-- template pour les pokémons -->
+<template slot="pokemon-template" id="pokemon-template">
+    <article class="pokemon-list-pokemon" slot="pokemon-id">
+        <h2 class="pokemon-list-pokemon-name" slot="pokemon-name">
+            Bulbizarre
+        </h2>
+        <div class="pokemon-type-container" slot="pokemon-type">
+            <!-- <span class="pokemon-type" slot="pokemon-type"></span> -->
+            
+        </div>
+        <img class="pokemon-list-pokemon-image" src="./assets/img/" slot="pokemon-img" alt="">
+        <span class="button" id="pokemon-button-see-caracteristic">Voir les caractéristiques</span>
+        <span class="button" id="add-pokemon-in-a-team">Ajouter à sa Team</span>
+
+    </article>
+</template>
+
+</html>

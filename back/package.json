@@ -1,0 +1,30 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev:back & npm run dev:front",
+    "dev:back": "node --watch index.js ",
+    "dev:front": "npm run dev --prefix ../front",
+    "db:create": "psql -U pokedex_admin -d pokedex -f data/create_tables.sql",
+    "db:seed": "psql -U pokedex_admin -d pokedex -f data/seeding_tables.sql",
+    "db:reset": "npm run db:create && npm run db:seed",
+    "postinstall": "npm install --prefix ../front"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.6.0",
+    "nodemon": "^3.1.4"
+  }
+}

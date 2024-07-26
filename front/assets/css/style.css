@@ -1,0 +1,287 @@
+.body{
+    background-color: #bbc6d6;
+    position: relative;
+    
+}
+
+.header{
+    background-image: url('../icons/headerimg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 27% ;
+    /* height: 30vh; */
+    position: relative;
+    
+   
+}
+
+.header-title{
+    padding: 2em;
+    color: white;
+    font-family: "Permanent Marker", cursive ;
+    font-size: 4em;
+}
+
+.main{
+    display: flex;
+    margin: 1em;
+    height: 60%;
+}
+
+.section{
+    margin: 1em;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.281);
+    height: 100%;
+}
+
+#sidebar{
+    background-color: #1F74BF;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around   ; */
+    align-items: center;
+    min-height: 100vh;
+    max-width: 20%;
+    
+}
+
+#pokemon-list{
+    background-color: #1f74bf9d;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+    position: relative;
+    min-width: 80%;
+}
+
+.team-container{
+    width: 100%;
+    height: 100%;
+    padding: 0 8em;
+}
+
+.team{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.team-name{
+    font-size: 2em;
+    font-weight: 600;
+    padding: 1em;
+}
+
+.team-description{
+    font-size: 1.5em;
+}
+
+.team-pokemons-list{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+.team-pokemon{
+    width: 125px;
+    text-align: center;
+    
+}
+
+.team-pokemon-update-modal{
+    width: 125px;
+    text-align: center;
+    margin: 0 1em;
+}
+
+.team-pokemon-update-modal:hover{
+    background-color: rgba(0, 0, 0, 0.205);
+} 
+
+.team-pokemon-image{
+    width: 80%;
+}
+
+.button{
+    padding: 1em;
+    background-color: #244E73;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.pokemon-list-pokemon{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* padding: 1em; */
+    align-items: center;
+    gap: 0.5em;
+    /* height: 5%; */
+    
+}
+
+.pokemon-list-pokemon-image{
+    width: 50%;
+}
+
+.pokemon-list-pokemon-name, .carac{
+    font-weight: 600;
+    padding: 0.5em;
+    font-size: 1.5em;
+}
+
+.pokemon-type{
+    color: white;
+    padding: 0.3em;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 0.5em;
+}
+
+#add-team-button{
+    margin: 3em;
+    cursor: pointer;
+}
+
+#see-types-button{
+    position: absolute;
+    top: -28px;
+    padding-left: 4em ;
+    padding-right: 4em;
+    font-size: 1.3em;
+}  
+
+
+
+/* mise en forme des modales */
+.modal{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* top: 0; */
+
+    
+    
+    
+}
+
+.modal-background{
+    position: absolute;
+    top: 0;
+    height: 30000px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.637);
+    /* z-index: 0; */
+}
+
+.modal-card{
+    position: absolute;
+    /* z-index: 3; */
+    background-color: #bbc6d6;
+    top: 30%;
+    left: 30%;
+    padding: 5em 10em;
+    display: flex;
+    flex-direction: column;
+}
+
+.modale-card-head, .modal-card-body, .modal-card-foot{
+    padding: 2em;
+    display: flex;
+    gap: 1em;
+}
+
+.modal-card-title{
+    font-size: 1.5em;
+    font-weight: 600;
+    
+}
+
+.modal-card-body{
+    flex-direction: column;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.input{
+    padding: 0.8em;
+    border-radius: 5px;
+}
+
+/* modale affichage des types de pokémon */
+.modal-type-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10em
+}
+
+.modal-type{
+padding: 1em;
+margin: 1em;
+font-weight: 600;
+font-size: 1.2em;
+background-color: #244E73;
+border-radius: 10px;
+text-align: center;
+cursor: pointer;
+
+}
+
+.modal-type-close-button, .modal-compare-button{
+    margin: 1em;
+}
+
+/* modale caractéristiques */
+.carac-modal-type-container{
+    margin: 1em;
+}
+
+.carac-modal-pokemon-type{
+    margin: 1em;
+}
+
+.caracteristics-detail{
+    display: flex;
+
+}
+
+.carac-modal-carac{
+    padding: 0.3em;
+    font-size: 1.2em;
+}
+
+.carac-modal-btn-container{
+    display: flex;
+}
+
+.modal-card-details{
+    align-items: center;
+
+}
+
+
+
+
+
+
+.is-active{
+    display: block;
+    
+}
+
+.overflowHidden{
+    overflow: hidden;
+}
+
